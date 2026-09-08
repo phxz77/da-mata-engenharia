@@ -1,11 +1,11 @@
 export const site = {
   name: "Da Mata Engenharia",
   legalName: "Da Mata Engenharia",
-  slogan: "Obras • Reformas • Vistorias",
+  slogan: "Engenharia próxima • Técnica • Responsável",
   eyebrow: "Da Mata Engenharia",
-  tagline: "Engenharia com método, segurança e acabamento.",
+  tagline: "Engenharia próxima para resolver o que sua obra precisa.",
   description:
-    "Da Mata Engenharia atua em obras, reformas e vistorias em São Paulo, com planejamento, precisão técnica e acompanhamento em cada etapa do projeto.",
+    "A Da Mata Engenharia oferece atendimento direto com o Eng. Paulo Cesar para avaliar problemas, orientar decisões e acompanhar obras, reformas e vistorias em São Paulo.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   contactName: "Eng. Paulo Cesar",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "5511953232468",
@@ -31,7 +31,7 @@ export const site = {
 } as const;
 
 export const defaultWhatsAppMessage =
-  "Olá, Eng. Paulo Cesar. Gostaria de solicitar um orçamento com a Da Mata Engenharia.";
+  "Olá, Eng. Paulo Cesar. Gostaria de explicar uma obra, reforma ou problema técnico.";
 
 export function hasWhatsApp() {
   return Boolean(site.whatsapp);

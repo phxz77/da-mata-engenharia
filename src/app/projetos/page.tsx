@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { ProjectTile } from "@/components/ui/ProjectTile";
-import { projects } from "@/lib/data/projects";
 
 export const metadata: Metadata = {
   title: "Projetos",
@@ -17,24 +15,18 @@ export default function ProjectsPage() {
     <div className="bg-paper pt-28 pb-20 sm:pt-32 lg:pb-28">
       <Container>
         <SectionHeading
-          eyebrow="Portfólio"
-          title="Projetos que mostram nossa engenharia na prática."
-          description="As fichas abaixo são a estrutura do acervo. Substitua nomes, textos e fotografias pelos projetos reais autorizados pela empresa."
+          eyebrow="Experiências reais"
+          title="Um arquivo visual baseado no trabalho que pode ser comprovado."
+          description="As fotografias reais do Eng. Paulo Cesar e dos trabalhos autorizados serão organizadas aqui quando forem adicionadas ao projeto."
         />
 
-        <div className="mt-14 columns-1 gap-5 sm:columns-2">
-          {projects.map((project, index) => (
-            <ProjectTile
-              key={project.slug}
-              project={project}
-              className={
-                index % 3 === 0
-                  ? "mb-5 break-inside-avoid aspect-[4/5]"
-                  : "mb-5 break-inside-avoid aspect-[4/3]"
-              }
-              sizes="(max-width: 640px) 100vw, 50vw"
-            />
-          ))}
+        <div className="mt-14 border-y border-line py-14 sm:py-20">
+          <p className="max-w-2xl text-2xl font-medium leading-tight tracking-[-0.03em] text-navy sm:text-4xl">
+            Fotos reais primeiro. Design depois.
+          </p>
+          <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted">
+            A galeria não será preenchida com imagens genéricas ou projetos fictícios.
+          </p>
         </div>
 
         <div className="mt-14">

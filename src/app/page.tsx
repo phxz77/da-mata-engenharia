@@ -12,6 +12,7 @@ import { Projects } from "@/components/sections/Projects";
 import { Services } from "@/components/sections/Services";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Hero } from "@/components/hero/Hero";
+import { RealGallery } from "@/components/sections/RealGallery";
 
 export default function HomePage() {
   return (
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Hero />
       <Authority />
       <About />
+      <RealGallery />
       <Services />
       <Projects />
       <BeforeAfter />

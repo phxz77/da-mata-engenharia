@@ -33,7 +33,7 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
         scrolled
-          ? "border-b border-navy/8 bg-paper/96 shadow-[0_8px_24px_-18px_rgba(14,39,68,0.45)]"
+          ? "border-b border-white/10 bg-navy/92 shadow-[0_8px_24px_-18px_rgba(0,0,0,0.45)] backdrop-blur-xl"
           : "border-b border-transparent bg-transparent",
       )}
     >
@@ -47,7 +47,8 @@ export function Header() {
           <Logo
             className={cn(
               "transition-all duration-500",
-              scrolled ? "h-14 sm:h-16" : "h-16 sm:h-[76px]",
+              "h-14 sm:h-16",
+              open ? "brightness-0" : "brightness-0 invert",
             )}
           />
         </Link>
@@ -57,7 +58,10 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="link-underline text-[12px] font-medium uppercase tracking-[0.16em] text-navy/80 hover:text-navy"
+              className={cn(
+                "link-underline text-[12px] font-medium uppercase tracking-[0.16em] transition-colors",
+                scrolled ? "text-paper/80 hover:text-paper" : "text-paper/85 hover:text-white",
+              )}
             >
               {item.label}
             </Link>
@@ -81,19 +85,22 @@ export function Header() {
           <span className="relative block h-3.5 w-5">
             <span
               className={cn(
-                "absolute left-0 h-px w-full bg-navy transition-all duration-300",
+                "absolute left-0 h-px w-full transition-all duration-300",
+                open ? "bg-navy" : "bg-paper",
                 open ? "top-1.5 rotate-45" : "top-0",
               )}
             />
             <span
               className={cn(
-                "absolute left-0 top-1.5 h-px w-full bg-navy transition-opacity duration-300",
+                "absolute left-0 top-1.5 h-px w-full transition-opacity duration-300",
+                open ? "bg-navy" : "bg-paper",
                 open && "opacity-0",
               )}
             />
             <span
               className={cn(
-                "absolute left-0 h-px w-full bg-navy transition-all duration-300",
+                "absolute left-0 h-px w-full transition-all duration-300",
+                open ? "bg-navy" : "bg-paper",
                 open ? "top-1.5 -rotate-45" : "top-3",
               )}
             />

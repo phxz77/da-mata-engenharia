@@ -46,35 +46,36 @@ export function Contact() {
   ];
 
   return (
-    <section id="contato" className="bg-paper py-20 sm:py-24 lg:py-32" aria-labelledby="contact-heading">
+    <section id="contato" className="bg-navy py-24 text-paper sm:py-28 lg:py-36" aria-labelledby="contact-heading">
       <Container>
-        <div className="grid gap-14 lg:grid-cols-12">
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <Reveal>
               <SectionHeading
                 id="contact-heading"
-                eyebrow="Contato"
-                title="Vamos conversar sobre seu projeto."
-                description="Envie os dados principais. Retornamos com o encaminhamento para obra, reforma ou vistoria."
+                eyebrow="Contato direto"
+                title="Vamos entender o que você precisa."
+                description="Explique sua obra, reforma ou problema técnico. O primeiro contato é direto e serve para avaliar como podemos ajudar."
+                tone="light"
               />
             </Reveal>
             <Reveal delay={0.1}>
               <ul className="mt-10 space-y-5">
                 {rows.map((row) => (
                   <li key={row.label} className="flex gap-4">
-                    <row.icon className="mt-0.5 h-4 w-4 text-gold-dark" />
+                    <row.icon className="mt-0.5 h-4 w-4 text-gold-soft" />
                     <div>
-                      <p className="text-[11px] uppercase tracking-[0.2em] text-muted">{row.label}</p>
+                      <p className="text-[11px] uppercase tracking-[0.2em] text-paper/50">{row.label}</p>
                       <a
                         href={row.href}
-                        className="mt-1 inline-block text-sm text-navy link-underline"
+                        className="link-underline mt-1 inline-block text-sm text-paper"
                         target={row.external ? "_blank" : undefined}
                         rel={row.external ? "noopener noreferrer" : undefined}
                       >
                         {row.value}
                       </a>
                       {"detail" in row && row.detail ? (
-                        <p className="mt-1 text-xs text-muted">{row.detail}</p>
+                        <p className="mt-1 text-xs text-paper/50">{row.detail}</p>
                       ) : null}
                     </div>
                   </li>
@@ -85,7 +86,7 @@ export function Contact() {
 
           <div className="lg:col-span-7">
             <Reveal>
-              <div className="border border-line bg-white p-6 sm:p-8 lg:p-10">
+              <div className="border border-white/15 bg-paper p-6 sm:p-8 lg:p-10">
                 <ContactForm />
               </div>
             </Reveal>

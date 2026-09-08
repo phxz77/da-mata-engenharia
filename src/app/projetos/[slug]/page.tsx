@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { CropMarks } from "@/components/ui/CropMarks";
 import { getProject, projects } from "@/lib/data/projects";
 
 type Props = {
@@ -24,11 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description: project.excerpt,
     alternates: { canonical: `/projetos/${project.slug}` },
-    openGraph: {
-      title: `${title} | Da Mata Engenharia`,
-      description: project.excerpt,
-      images: [{ url: project.cover }],
-    },
+    openGraph: { title: `${title} | Da Mata Engenharia`, description: project.excerpt },
   };
 }
 
@@ -50,38 +44,16 @@ export default async function ProjectPage({ params }: Props) {
           <p className="mt-3 text-sm text-muted">{project.location}</p>
         ) : null}
 
-        <div className="relative mt-10 aspect-[16/9] overflow-hidden bg-navy">
-          <Image
-            src={project.cover}
-            alt={project.coverAlt}
-            fill
-            priority
-            className="object-cover"
-            sizes="(max-width: 1320px) 100vw, 1320px"
-          />
-          <CropMarks className="inset-4" />
+        <div className="mt-10 border-y border-line py-12 sm:py-16">
+          <p className="max-w-2xl text-2xl font-medium leading-tight tracking-[-0.03em] text-navy sm:text-3xl">
+            Esta experiência será publicada com fotos reais e informações confirmadas.
+          </p>
         </div>
-        {project.placeholder ? (
-          <p className="mt-3 text-xs text-muted">Imagem ilustrativa — substituir por fotografia oficial do projeto.</p>
-        ) : null}
 
         <div className="mt-12 grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-8">
             <p className="text-[15px] leading-relaxed text-muted">{project.description}</p>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
-              {project.gallery.slice(1).map((image) => (
-                <div key={image} className="relative aspect-[4/3] overflow-hidden bg-navy">
-                  <Image
-                    src={image}
-                    alt={`Galeria — ${title}`}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 40vw"
-                  />
-                </div>
-              ))}
-            </div>
           </div>
 
           <aside className="lg:col-span-4">

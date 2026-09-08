@@ -8,72 +8,52 @@ export type Project = {
   services: string[];
   featured: boolean;
   layout: "large" | "square" | "wide";
-  placeholder: true;
-  cover: string;
-  gallery: string[];
-  coverAlt: string;
 };
 
 export const projects: Project[] = [
   {
     slug: "obra-residencial",
-    title: "[INSERIR PROJETO] — Obra residencial",
+    title: "Obra e estrutura",
     category: "Obras",
-    excerpt: "Estrutura de portfólio para obra residencial. Inserir nome, local e descrição oficiais.",
+    excerpt: "Referência visual para situações de obra e acompanhamento técnico.",
     description:
-      "[INSERIR DESCRIÇÃO DO PROJETO] Espaço reservado para o relato técnico da obra: contexto, escopo, etapas executadas e resultado. Substitua este texto e as imagens ilustrativas pelas fotografias reais do projeto.",
+      "Esta página apresenta uma referência visual de obra. O relato técnico, as fotos autorais e os dados do atendimento entram somente após confirmação do trabalho e autorização para publicação.",
     services: ["Obras", "Acompanhamento técnico"],
     featured: true,
     layout: "large",
-    placeholder: true,
-    cover: "/photos/projeto-1.jpg",
-    gallery: ["/photos/projeto-1.jpg", "/photos/projeto-2.jpg", "/photos/projeto-2b.jpg"],
-    coverAlt: "Residência contemporânea em madeira, vidro e concreto",
   },
   {
     slug: "reforma",
-    title: "[INSERIR PROJETO] — Reforma",
+    title: "Reforma e acabamento",
     category: "Reformas",
-    excerpt: "Estrutura de portfólio para reforma. Inserir nome, local e descrição oficiais.",
+    excerpt: "Referência visual para intervenções e melhorias em imóveis existentes.",
     description:
-      "[INSERIR DESCRIÇÃO DO PROJETO] Descreva o estado original, as intervenções realizadas e o critério técnico adotado na reforma.",
+      "Esta página apresenta uma referência visual de reforma. Escopo, local e imagens de trabalhos realizados serão publicados apenas com informações confirmadas.",
     services: ["Reformas"],
     featured: true,
     layout: "square",
-    placeholder: true,
-    cover: "/photos/projeto-2.jpg",
-    gallery: ["/photos/projeto-2.jpg", "/photos/projeto-2b.jpg"],
-    coverAlt: "Volume residencial reformado, com madeira, vidro e acesso pavimentado",
   },
   {
     slug: "vistoria-tecnica",
-    title: "[INSERIR PROJETO] — Vistoria técnica",
+    title: "Vistoria e documentação",
     category: "Vistorias",
-    excerpt: "Estrutura de portfólio para vistoria. Inserir identificação autorizada e descrição oficiais.",
+    excerpt: "Referência visual para avaliação técnica e registro de condições.",
     description:
-      "[INSERIR DESCRIÇÃO DO PROJETO] Utilize este espaço para explicar o objetivo da vistoria, o que foi observado e as orientações técnicas resultantes — sem expor dados sigilosos.",
+      "Esta página apresenta uma referência visual de vistoria. O objetivo, as constatações e as orientações técnicas serão descritos somente quando houver material autorizado.",
     services: ["Vistorias"],
     featured: true,
     layout: "square",
-    placeholder: true,
-    cover: "/photos/projeto-3.jpg",
-    gallery: ["/photos/projeto-3.jpg", "/photos/hero.jpg"],
-    coverAlt: "Análise técnica sobre desenhos, instrumentos de medição e documentação de projeto",
   },
   {
     slug: "acompanhamento-de-obra",
-    title: "[INSERIR PROJETO] — Acompanhamento de obra",
+    title: "Acompanhamento técnico",
     category: "Obras",
-    excerpt: "Estrutura de portfólio para acompanhamento de obra. Inserir nome, local e descrição oficiais.",
+    excerpt: "Referência visual para presença técnica durante a execução.",
     description:
-      "[INSERIR DESCRIÇÃO DO PROJETO] Relato do acompanhamento: planejamento, execução e entrega. Substitua as imagens ilustrativas pelas fotos oficiais da obra.",
+      "Esta página apresenta uma referência visual de acompanhamento. O relato de cada trabalho será publicado com escopo, imagens e informações verificadas.",
     services: ["Obras", "Acompanhamento técnico"],
     featured: true,
     layout: "wide",
-    placeholder: true,
-    cover: "/photos/projeto-4.jpg",
-    gallery: ["/photos/projeto-4.jpg", "/photos/about-detail.jpg"],
-    coverAlt: "Acompanhamento de obra: equipe e estrutura no pavimento em execução",
   },
 ];
 

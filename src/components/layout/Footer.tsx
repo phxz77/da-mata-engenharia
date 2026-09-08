@@ -15,12 +15,10 @@ export function Footer() {
       <Container className="py-16 lg:py-20">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
-            <div className="inline-flex bg-paper px-4 py-4">
-              <Logo size="footer" />
-            </div>
+            <Logo size="footer" className="brightness-0 invert opacity-90" />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-paper/70">
-              Engenharia para obras, reformas e vistorias — com planejamento,
-              precisão técnica e compromisso em cada etapa.
+              Atendimento direto para entender problemas, orientar decisões e acompanhar
+              obras, reformas e vistorias com responsabilidade técnica.
             </p>
           </div>
 

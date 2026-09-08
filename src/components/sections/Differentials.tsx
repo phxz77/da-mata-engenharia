@@ -5,30 +5,34 @@ import { differentials } from "@/lib/data/differentials";
 
 export function Differentials() {
   return (
-    <section className="bg-paper py-20 sm:py-24 lg:py-32" aria-labelledby="differentials-heading">
-      <Container>
-        <Reveal>
-          <SectionHeading
-            id="differentials-heading"
-            eyebrow="Diferenciais"
-            title="Por que escolher a Da Mata Engenharia?"
-            description="Critérios de trabalho que podem ser sustentados no dia a dia — sem números, selos ou prêmios que ainda não foram informados."
-          />
-        </Reveal>
-
-        <div className="mt-14 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
-          {differentials.map((item, index) => (
-            <Reveal key={item.number} delay={0.05 * index}>
-              <article className="relative h-full bg-paper p-7 sm:p-8">
-                <span aria-hidden className="mb-5 block h-3 w-3 border-l border-t border-gold/55" />
-                <p className="text-[11px] tracking-[0.28em] text-gold-dark">{item.number}</p>
-                <h3 className="mt-4 text-lg font-semibold tracking-[-0.02em] text-navy">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{item.description}</p>
-              </article>
+    <section className="relative overflow-hidden bg-navy py-24 text-paper sm:py-28 lg:py-36" aria-labelledby="differentials-heading">
+      <div className="technical-grid pointer-events-none absolute inset-0 opacity-[0.12]" />
+      <Container className="relative">
+        <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-4">
+            <Reveal>
+              <SectionHeading
+                id="differentials-heading"
+                eyebrow="Critérios de trabalho"
+                title="O rigor aparece em cada decisão."
+                description="Sem promessas genéricas: quatro princípios que orientam a forma como cada demanda é conduzida."
+                tone="light"
+              />
             </Reveal>
-          ))}
+          </div>
+          <div className="lg:col-span-8">
+            <div className="border-t border-white/15">
+              {differentials.map((item, index) => (
+                <Reveal key={item.number} delay={0.05 * index}>
+                  <article className="grid gap-4 border-b border-white/15 py-7 sm:grid-cols-[100px_1fr_1.4fr] sm:items-center sm:gap-8 sm:py-8">
+                    <p className="text-4xl font-light tracking-[-0.06em] text-gold-soft sm:text-5xl">{item.number}</p>
+                    <h3 className="text-xl font-semibold tracking-[-0.03em] text-paper">{item.title}</h3>
+                    <p className="max-w-md text-sm leading-relaxed text-paper/60">{item.description}</p>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </div>
       </Container>
     </section>

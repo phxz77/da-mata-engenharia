@@ -18,15 +18,13 @@ export function Testimonials() {
 
         {testimonials.length === 0 ? (
           <Reveal delay={0.1}>
-            <div className="mt-12 grid gap-px bg-line md:grid-cols-3">
-              {[0, 1, 2].map((slot) => (
-                <div key={slot} className="min-h-[220px] bg-white p-8">
-                  <span className="block h-px w-10 bg-gold/70" />
-                  <p className="mt-6 text-sm leading-relaxed text-muted">
-                    [INSERIR DEPOIMENTO] Espaço reservado para um relato autorizado de cliente.
-                  </p>
-                </div>
-              ))}
+            <div className="mt-12 border-y border-line py-10 sm:py-14">
+              <p className="max-w-3xl text-2xl font-medium leading-tight tracking-[-0.03em] text-navy sm:text-3xl">
+                Cada trabalho começa com escuta, clareza e responsabilidade técnica.
+              </p>
+              <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted">
+                A experiência de cada cliente será publicada aqui somente com autorização e contexto reais.
+              </p>
             </div>
           </Reveal>
         ) : (

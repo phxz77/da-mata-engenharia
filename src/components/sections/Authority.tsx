@@ -2,22 +2,22 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
 const items = [
-  { number: "01", label: "Projetos realizados", note: "Portfólio em documentação" },
-  { number: "02", label: "Obras acompanhadas", note: "Execução com método" },
-  { number: "03", label: "Vistorias técnicas", note: "Avaliação objetiva" },
-  { number: "04", label: "Atendimento personalizado", note: "Cada demanda no seu contexto" },
+  { number: "01", label: "Entender o problema", note: "Escuta antes da indicação" },
+  { number: "02", label: "Avaliar tecnicamente", note: "O que existe e o que precisa ser feito" },
+  { number: "03", label: "Acompanhar o necessário", note: "Presença conforme o escopo contratado" },
+  { number: "04", label: "Orientar com clareza", note: "Decisões explicadas sem complicação" },
 ];
 
 export function Authority() {
   return (
-    <section className="border-y border-line bg-white" aria-labelledby="authority-heading">
+    <section className="border-y border-white/10 bg-navy" aria-labelledby="authority-heading">
       <Container className="py-14 lg:py-16">
         <Reveal>
           <p
             id="authority-heading"
-            className="max-w-xl text-sm font-medium tracking-[-0.01em] text-navy sm:text-base"
+            className="max-w-xl text-sm font-medium tracking-[-0.01em] text-paper sm:text-base"
           >
-            Engenharia com planejamento, técnica e responsabilidade.
+            Um engenheiro responsável acompanhando o que foi combinado com você.
           </p>
         </Reveal>
 
@@ -26,8 +26,8 @@ export function Authority() {
             <Reveal key={item.label} delay={0.08 * index}>
               <article className="border-t border-gold/50 pt-5">
                 <p className="text-[11px] tracking-[0.28em] text-gold-dark">{item.number}</p>
-                <h3 className="mt-3 text-base font-semibold text-navy">{item.label}</h3>
-                <p className="mt-2 text-sm text-muted">{item.note}</p>
+                <h3 className="mt-3 text-base font-semibold text-paper">{item.label}</h3>
+                <p className="mt-2 text-sm text-paper/55">{item.note}</p>
               </article>
             </Reveal>
           ))}

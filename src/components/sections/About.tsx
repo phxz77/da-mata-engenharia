@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { CropMarks } from "@/components/ui/CropMarks";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { DimensionMark } from "@/components/ui/DimensionMark";
@@ -8,15 +7,15 @@ import { photos } from "@/lib/data/images";
 
 export function About() {
   return (
-    <section id="sobre" className="bg-paper py-20 sm:py-24 lg:py-32" aria-labelledby="about-heading">
+    <section id="sobre" className="bg-paper py-24 sm:py-28 lg:py-40" aria-labelledby="about-heading">
       <Container>
         <div className="grid items-center gap-14 pb-8 lg:grid-cols-12 lg:gap-16 lg:pb-10">
           <div className="lg:col-span-5">
             <Reveal>
               <SectionHeading
                 id="about-heading"
-                eyebrow="Sobre"
-                title="Engenharia pensada para entregar segurança e resultado."
+                eyebrow="01 / Quem atende você"
+                title="Você fala diretamente com um engenheiro."
               />
             </Reveal>
             <Reveal delay={0.08}>
@@ -25,47 +24,39 @@ export function About() {
             <Reveal delay={0.1}>
               <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-muted">
                 <p>
-                  A Da Mata Engenharia atua em <strong className="font-medium text-navy">obras</strong>,{" "}
-                  <strong className="font-medium text-navy">reformas</strong> e{" "}
-                  <strong className="font-medium text-navy">vistorias</strong> — três frentes que
-                  pedem método, presença técnica e responsabilidade com o que está sendo construído
-                  ou avaliado.
+                  A Da Mata Engenharia é conduzida pelo <strong className="font-medium text-navy">Eng. Paulo Cesar</strong>,
+                  com atendimento próximo para entender o que está acontecendo na sua obra, reforma
+                  ou imóvel antes de indicar qualquer caminho.
                 </p>
                 <p>
-                  O posicionamento é institucional e direto: planejar antes de executar, comunicar
-                  com clareza e tratar cada etapa com o mesmo rigor. O objetivo é entregar um
-                  trabalho organizado, seguro e à altura de quem exige competência antes mesmo do
-                  primeiro encontro no canteiro.
+                  O trabalho começa pelo diagnóstico e pela conversa clara sobre escopo, prioridades
+                  e limites. Conforme o serviço contratado, o engenheiro orienta decisões, acompanha
+                  os momentos necessários da execução e ajuda a buscar uma solução tecnicamente adequada.
                 </p>
                 <p className="border-l-2 border-gold pl-4 text-navy/80">
-                  Atuação a partir de São Paulo, com atendimento do Eng. Paulo Cesar.
+                  Atendimento direto em São Paulo. Quando o projeto exige outras especialidades, parceiros
+                  são reunidos de acordo com a necessidade, sem prometer uma estrutura que não existe.
                 </p>
               </div>
             </Reveal>
           </div>
 
-          <div className="relative pb-10 lg:col-span-7">
-            <Reveal>
-              <div className="relative aspect-[4/5] w-full max-w-[520px] sm:aspect-[5/6] lg:ml-auto lg:max-w-none">
+          <div className="lg:col-span-7">
+            <Reveal delay={0.12}>
+              <div className="relative aspect-[4/5] overflow-hidden bg-navy sm:aspect-[5/6] lg:aspect-[4/5]">
                 <Image
-                  src={photos.about}
-                  alt="Edifícios contemporâneos em aço e vidro, fotografados em contrapongência"
+                  src={photos.paulo}
+                  alt="Engenheiro Paulo Cesar em uma obra, usando capacete e segurando uma prancheta."
                   fill
-                  className="object-cover"
+                  className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 55vw"
+                  priority
                 />
-                <CropMarks className="inset-3" />
-              </div>
-            </Reveal>
-            <Reveal delay={0.15} className="absolute -bottom-6 left-0 w-[46%] max-w-[240px] sm:-bottom-8 lg:left-0">
-              <div className="relative aspect-[4/3] border border-paper bg-navy p-1 shadow-[0_18px_40px_-24px_rgba(14,39,68,0.55)]">
-                <Image
-                  src={photos.aboutDetail}
-                  alt="Detalhe de canteiro: armação, forma e equipe em execução"
-                  fill
-                  className="object-cover"
-                  sizes="240px"
-                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/75 via-transparent to-transparent" />
+                <div className="absolute inset-x-6 bottom-6 text-paper sm:inset-x-8 sm:bottom-8">
+                  <p className="text-[11px] uppercase tracking-[0.28em] text-gold-soft">Responsabilidade técnica</p>
+                  <p className="mt-2 text-2xl font-medium tracking-[-0.03em]">Eng. Paulo Cesar</p>
+                </div>
               </div>
             </Reveal>
           </div>

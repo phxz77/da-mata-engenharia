@@ -1,21 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { CropMarks } from "@/components/ui/CropMarks";
-import { ProcessSpine } from "@/components/ui/ProcessSpine";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { IconObras, IconReformas, IconVistorias } from "@/components/ui/EngineeringIcons";
 import { services } from "@/lib/data/services";
-
-const icons = {
-  obras: IconObras,
-  reformas: IconReformas,
-  vistorias: IconVistorias,
-};
-
-const labels = ["EXECUÇÃO", "INTERVENÇÃO", "PRECISÃO"];
 
 export function Services() {
   return (
@@ -24,63 +12,26 @@ export function Services() {
         <Reveal>
           <SectionHeading
             id="services-heading"
-            eyebrow="Serviços"
-            title="Soluções em engenharia para cada etapa do seu projeto."
-            description="Três frentes de atuação, com o mesmo critério técnico: organizar o trabalho, executar com segurança e deixar o processo inteligível para o cliente."
+            eyebrow="Como podemos ajudar"
+            title="Um caminho técnico para o problema que você está vivendo."
+            description="Conte o que precisa ser avaliado, planejado ou acompanhado. O primeiro passo é entender o contexto e definir o escopo adequado."
           />
         </Reveal>
-        <Reveal delay={0.08}>
-          <ProcessSpine className="mt-10" />
-        </Reveal>
-
-        <div className="relative mt-14">
-          <div className="grid gap-px bg-line md:grid-cols-3">
+        <div className="relative mt-14 border-t border-navy/15">
+          <div>
             {services.map((service, index) => {
-              const Icon = icons[service.id as keyof typeof icons] ?? IconObras;
               return (
                 <Reveal key={service.id} delay={0.08 * index}>
-                  <article className="group relative flex h-full flex-col bg-white p-7 sm:p-9">
-                    <div className="flex items-start justify-between">
-                      <span className="text-[12px] tracking-[0.28em] text-gold-dark">
-                        {service.number}
-                      </span>
-                      <Icon className="text-navy" />
-                    </div>
-
-                    <h3 className="mt-10 text-2xl font-semibold tracking-[-0.02em] text-navy">
+                  <Link href={service.href} className="group relative grid grid-cols-[54px_1fr_auto] items-center gap-4 border-b border-navy/15 py-7 transition-colors hover:bg-navy hover:text-paper sm:grid-cols-[80px_1fr_1fr_auto] sm:gap-7 sm:py-8">
+                    <span className="text-[12px] tracking-[0.28em] text-gold-dark">{service.number}</span>
+                    <h3 className="text-2xl font-semibold tracking-[-0.03em] text-navy transition-colors group-hover:text-paper sm:text-3xl">
                       {service.title}
                     </h3>
-                    <p className="mt-4 flex-1 text-sm leading-relaxed text-muted">
+                    <p className="col-start-2 col-span-2 max-w-sm text-sm leading-relaxed text-muted transition-colors group-hover:text-paper/70 sm:col-auto sm:col-span-1">
                       {service.description}
                     </p>
-
-                    <div className="relative mt-8 aspect-[16/10] overflow-hidden bg-navy">
-                      <Image
-                        src={service.image}
-                        alt={service.imageAlt}
-                        fill
-                        className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] group-active:scale-[1.02]"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                      <div className="absolute inset-0 bg-navy/10" />
-                      <CropMarks className="inset-2" />
-                    </div>
-
-                    <p className="mt-4 text-[10px] tracking-[0.28em] text-gold-dark">
-                      {labels[index]}
-                    </p>
-
-                    <Link
-                      href={service.href}
-                      className="mt-5 inline-flex items-center gap-2 text-[12px] font-medium uppercase tracking-[0.16em] text-navy"
-                    >
-                      <span className="link-underline">Solicitar este serviço</span>
-                      <ArrowUpRight
-                        className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                        strokeWidth={1.6}
-                      />
-                    </Link>
-                  </article>
+                    <ArrowUpRight className="h-5 w-5 text-gold transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" strokeWidth={1.5} />
+                  </Link>
                 </Reveal>
               );
             })}
