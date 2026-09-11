@@ -31,6 +31,8 @@ export function BeforeAfter() {
                 after={item.after}
                 beforeAlt={item.beforeAlt}
                 afterAlt={item.afterAlt}
+                beforePosition={item.beforePosition}
+                afterPosition={item.afterPosition}
               />
             </div>
             <div className="mt-4 flex items-center justify-between gap-4 text-[10px] uppercase tracking-[0.22em] text-gold-dark">

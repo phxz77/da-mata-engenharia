@@ -10,6 +10,8 @@ type ImageCompareProps = {
   after: string;
   beforeAlt: string;
   afterAlt: string;
+  beforePosition?: string;
+  afterPosition?: string;
   className?: string;
 };
 
@@ -18,6 +20,8 @@ export function ImageCompare({
   after,
   beforeAlt,
   afterAlt,
+  beforePosition = "center 50%",
+  afterPosition = "center 50%",
   className,
 }: ImageCompareProps) {
   const [value, setValue] = useState(46);
@@ -96,6 +100,7 @@ export function ImageCompare({
         alt={afterAlt}
         fill
         className="object-cover object-center"
+        style={{ objectPosition: afterPosition }}
         sizes="(max-width: 1024px) 100vw, 1100px"
         draggable={false}
       />
@@ -108,6 +113,7 @@ export function ImageCompare({
           alt={beforeAlt}
           fill
           className="object-cover object-center"
+          style={{ objectPosition: beforePosition }}
           sizes="(max-width: 1024px) 100vw, 1100px"
           draggable={false}
         />

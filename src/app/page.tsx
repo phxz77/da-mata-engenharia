@@ -13,6 +13,9 @@ import { Services } from "@/components/sections/Services";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Hero } from "@/components/hero/Hero";
 import { RealGallery } from "@/components/sections/RealGallery";
+import { CompletedWork } from "@/components/sections/CompletedWork";
+import { ClientReviews } from "@/components/sections/ClientReviews";
+import { Partners } from "@/components/sections/Partners";
 
 export default function HomePage() {
   return (
@@ -23,14 +26,17 @@ export default function HomePage() {
       <RealGallery />
       <Services />
       <Projects />
+      <CompletedWork />
       <BeforeAfter />
       <Process />
       <Inspections />
       <Differentials />
       <Testimonials />
+      <ClientReviews />
       <InstagramFeed />
       <Faq />
       <CtaBanner />
+      <Partners />
       <Contact />
     </>
   );
