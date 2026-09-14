@@ -23,18 +23,18 @@ export default function HomePage() {
       <Hero />
       <Authority />
       <About />
-      <RealGallery />
       <Services />
-      <Projects />
+      <Process />
       <CompletedWork />
       <BeforeAfter />
-      <Process />
       <Inspections />
       <Differentials />
       <Testimonials />
       <ClientReviews />
       <InstagramFeed />
       <Faq />
+      <RealGallery />
+      <Projects />
       <CtaBanner />
       <Partners />
       <Contact />

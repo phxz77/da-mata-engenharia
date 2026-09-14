@@ -31,4 +31,12 @@ export const services: Service[] = [
     description:
       "Avaliação técnica para entender um problema, registrar condições e orientar os próximos passos, com laudo ou parecer quando aplicável.",
   },
+  {
+    id: "arquitetura",
+    number: "04",
+    title: "Escritórios de Arquitetura",
+    href: "/#contato",
+    description:
+      "Apoio técnico para escritórios de arquitetura e projetos que precisam de coordenação, clareza operacional e acompanhamento na execução.",
+  },
 ];

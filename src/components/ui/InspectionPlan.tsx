@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -15,9 +15,16 @@ const points = [
 
 export function InspectionPlan() {
   const ref = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
   const inView = useInView(ref, { once: true, margin: "-15% 0px" });
   const reduced = useReducedMotion();
-  const show = reduced || inView;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const shouldAnimate = mounted && !reduced && "IntersectionObserver" in window;
+  const show = reduced || !shouldAnimate || inView;
 
   return (
     <div ref={ref} className="relative mx-auto aspect-[4/3] w-full max-w-md" aria-hidden>

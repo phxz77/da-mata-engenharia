@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -9,9 +9,16 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export function ProcessSpine({ className }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
   const reduced = useReducedMotion();
-  const show = reduced || inView;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const shouldAnimate = mounted && !reduced && "IntersectionObserver" in window;
+  const show = reduced || !shouldAnimate || inView;
 
   return (
     <div ref={ref} className={cn("max-w-xl", className)} aria-hidden>

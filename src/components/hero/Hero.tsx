@@ -14,7 +14,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-[700px] h-[100svh] items-end overflow-hidden bg-navy"
+      className="relative flex min-h-[540px] items-end overflow-hidden bg-navy pb-6 pt-[var(--header-height)] sm:min-h-[600px] sm:pb-8 lg:min-h-[640px] lg:pb-8"
       aria-labelledby="hero-heading"
     >
       <Image
@@ -27,9 +27,9 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,11,18,0.95)_0%,rgba(7,17,28,0.72)_42%,rgba(7,17,28,0.16)_100%)]" />
       <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-navy/15" />
-      <div className="relative z-10 w-full pb-8 pt-24 sm:pb-10 sm:pt-28 lg:pb-12 lg:pt-32">
+      <div className="relative z-10 w-full pb-6 pt-12 sm:pb-8 sm:pt-14 lg:pb-8 lg:pt-12">
         <Container>
-          <div className="max-w-3xl">
+          <div className="max-w-[38rem]">
             <motion.span
               aria-hidden
               className="block h-px w-14 bg-gold"
@@ -41,7 +41,7 @@ export function Hero() {
 
             <motion.h1
               id="hero-heading"
-              className="mt-4 max-w-[11ch] text-balance text-[clamp(2.75rem,10vw,4rem)] font-semibold leading-[0.96] tracking-[-0.045em] text-paper sm:mt-5 sm:text-[clamp(3.5rem,8vw,4.5rem)] lg:text-[clamp(3rem,4.2vw,4.5rem)]"
+              className="mt-4 max-w-[9.5ch] text-balance text-[clamp(2.5rem,7vw,3.8rem)] font-semibold leading-[0.88] tracking-[-0.045em] text-paper sm:mt-5 sm:max-w-[10.5ch] sm:text-[clamp(3rem,5vw,4.3rem)] lg:max-w-[11ch] lg:text-[clamp(2.9rem,3.2vw,4.1rem)]"
               initial={reduced ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.55, ease }}
@@ -50,7 +50,7 @@ export function Hero() {
             </motion.h1>
 
             <motion.p
-              className="mt-4 max-w-lg text-[15px] leading-relaxed text-paper/75 sm:mt-5 sm:text-base"
+              className="mt-3 max-w-lg text-[15px] leading-relaxed text-paper/75 sm:mt-4 sm:text-base"
               initial={reduced ? false : { opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7, ease }}
@@ -59,7 +59,7 @@ export function Hero() {
             </motion.p>
 
             <motion.div
-              className="mt-6 flex flex-col gap-3 sm:mt-7 sm:flex-row sm:items-center"
+              className="mt-5 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:items-center"
               initial={reduced ? false : { opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.85, ease }}
@@ -70,7 +70,7 @@ export function Hero() {
               </Button>
             </motion.div>
           </div>
-          <div className="mt-10 grid max-w-3xl grid-cols-3 border-t border-white/25 pt-4 text-paper sm:mt-12 sm:pt-5">
+          <div className="mt-8 grid max-w-3xl grid-cols-3 border-t border-white/25 pt-4 text-paper sm:mt-9 sm:pt-5">
             {[
               ["01", "Diagnóstico"],
               ["02", "Acompanhamento"],

@@ -15,7 +15,12 @@ export function Header() {
   const reduced = useReducedMotion();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => {
+      const nextScrolled = window.scrollY > 12;
+      setScrolled(nextScrolled);
+      document.documentElement.style.setProperty("--header-height", nextScrolled ? "80px" : "100px");
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);

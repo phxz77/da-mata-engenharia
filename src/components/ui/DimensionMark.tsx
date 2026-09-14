@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -11,9 +11,16 @@ type DimensionMarkProps = {
 
 export function DimensionMark({ label, className }: DimensionMarkProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
   const inView = useInView(ref, { once: true, margin: "-10% 0px" });
   const reduced = useReducedMotion();
-  const active = reduced || inView;
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const shouldAnimate = mounted && !reduced && "IntersectionObserver" in window;
+  const active = reduced || !shouldAnimate || inView;
 
   return (
     <div ref={ref} className={cn("flex items-center gap-3", className)} aria-hidden>

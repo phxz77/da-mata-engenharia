@@ -7,10 +7,10 @@ import { photos } from "@/lib/data/images";
 
 export function About() {
   return (
-    <section id="sobre" className="bg-paper py-24 sm:py-28 lg:py-40" aria-labelledby="about-heading">
+    <section id="sobre" className="bg-paper py-8 sm:py-10 lg:py-14" aria-labelledby="about-heading">
       <Container>
-        <div className="grid items-center gap-14 pb-8 lg:grid-cols-12 lg:gap-16 lg:pb-10">
-          <div className="lg:col-span-5">
+        <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-5 lg:pt-1 lg:pr-2">
             <Reveal>
               <SectionHeading
                 id="about-heading"
@@ -19,10 +19,10 @@ export function About() {
               />
             </Reveal>
             <Reveal delay={0.08}>
-              <DimensionMark label="MÉTODO" className="mt-8 max-w-sm" />
+              <DimensionMark label="MÉTODO" className="mt-5 max-w-sm" />
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="mt-8 space-y-5 text-[15px] leading-relaxed text-muted">
+              <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-muted">
                 <p>
                   A Da Mata Engenharia é conduzida pelo <strong className="font-medium text-navy">Eng. Paulo Cesar</strong>,
                   com atendimento próximo para entender o que está acontecendo na sua obra, reforma
@@ -43,13 +43,14 @@ export function About() {
 
           <div className="lg:col-span-7">
             <Reveal delay={0.12}>
-              <div className="relative aspect-[2/3] overflow-hidden bg-navy">
+              <div className="relative mx-auto aspect-[3/4] w-full max-w-[470px] overflow-hidden bg-navy lg:mx-0 lg:max-w-[540px] lg:justify-self-end">
                 <Image
                   src={photos.paulo}
                   alt="Engenheiro Paulo Cesar em uma obra, usando capacete e segurando uma prancheta."
                   fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="object-cover"
+                  style={{ objectPosition: "50% 10%" }}
+                  sizes="(max-width: 1024px) 100vw, 42vw"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy/75 via-transparent to-transparent" />

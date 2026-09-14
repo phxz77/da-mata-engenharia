@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -20,8 +20,15 @@ export function Reveal({
   once = true,
 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
   const inView = useInView(ref, { once, margin: "-12% 0px" });
   const reduced = useReducedMotion();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const shouldAnimate = mounted && !reduced && "IntersectionObserver" in window;
 
   if (reduced) {
     return <div className={className}>{children}</div>;
@@ -31,8 +38,8 @@ export function Reveal({
     <motion.div
       ref={ref}
       className={cn(className)}
-      initial={{ opacity: 0, y }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
+      initial={shouldAnimate ? { opacity: 0, y } : false}
+      animate={shouldAnimate ? (inView ? { opacity: 1, y: 0 } : { opacity: 0, y }) : { opacity: 1, y: 0 }}
       transition={{
         duration: 0.6,
         delay,
