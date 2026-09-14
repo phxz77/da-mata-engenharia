@@ -26,14 +26,16 @@ export function BeforeAfter() {
         {item ? (
           <Reveal delay={0.12}>
             <div className="relative mt-12">
-              <ImageCompare
-                before={item.before}
-                after={item.after}
-                beforeAlt={item.beforeAlt}
-                afterAlt={item.afterAlt}
-                beforePosition={item.beforePosition}
-                afterPosition={item.afterPosition}
-              />
+              <div className="mx-auto w-full max-w-[60rem] lg:w-[54%]">
+                <ImageCompare
+                  before={item.before}
+                  after={item.after}
+                  beforeAlt={item.beforeAlt}
+                  afterAlt={item.afterAlt}
+                  beforePosition={item.beforePosition}
+                  afterPosition={item.afterPosition}
+                />
+              </div>
             </div>
             <div className="mt-4 flex items-center justify-between gap-4 text-[10px] uppercase tracking-[0.22em] text-gold-dark">
               <span>Estrutura</span>

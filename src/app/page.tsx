@@ -27,13 +27,13 @@ export default function HomePage() {
       <Process />
       <CompletedWork />
       <BeforeAfter />
+      <RealGallery />
       <Inspections />
       <Differentials />
       <Testimonials />
       <ClientReviews />
       <InstagramFeed />
       <Faq />
-      <RealGallery />
       <Projects />
       <CtaBanner />
       <Partners />
