@@ -53,18 +53,20 @@ export const CircularGallery = forwardRef<HTMLDivElement, CircularGalleryProps>(
               key={item.id}
               type="button"
               onClick={() => setSelectedItem(item)}
-              className="gallery-mobile-card group relative h-[390px] w-[min(78vw,290px)] shrink-0 snap-center overflow-hidden bg-navy text-left"
+              className="gallery-mobile-card group relative aspect-[4/5] w-[min(78vw,300px)] shrink-0 snap-center overflow-hidden bg-[#0d2233] text-left"
               aria-label={`Abrir imagem: ${item.title}`}
             >
-              <Image
-                src={item.image}
-                alt={item.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                style={{ objectPosition: item.position }}
-                sizes="290px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/10 to-transparent" />
+              <div className="relative h-full w-full overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  fill
+                  className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                  style={{ objectPosition: item.position }}
+                  sizes="(max-width: 767px) 78vw, 300px"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/15 to-transparent" />
               <div className="absolute inset-x-5 bottom-5 text-paper">
                 <p className="text-[10px] uppercase tracking-[0.22em] text-gold-soft">{item.title}</p>
                 <p className="mt-2 text-sm text-paper/75">{item.description}</p>
@@ -80,17 +82,19 @@ export const CircularGallery = forwardRef<HTMLDivElement, CircularGalleryProps>(
                 key={item.id}
                 type="button"
                 onClick={() => setSelectedItem(item)}
-                className="group relative h-[420px] w-[290px] shrink-0 overflow-hidden border border-white/15 bg-navy text-left shadow-2xl"
+                className="group relative aspect-[4/5] h-[420px] w-[300px] shrink-0 overflow-hidden border border-white/15 bg-[#0d2233] text-left shadow-2xl"
                 aria-label={`Abrir imagem: ${item.title}`}
               >
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  style={{ objectPosition: item.position }}
-                  sizes="290px"
-                />
+                <div className="relative h-full w-full overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+                    style={{ objectPosition: item.position }}
+                    sizes="300px"
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent" />
                 <div className="absolute inset-x-6 bottom-6 text-paper">
                   <p className="text-[10px] uppercase tracking-[0.22em] text-gold-soft">{item.title}</p>

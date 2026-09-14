@@ -55,7 +55,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.7, ease }}
             >
-              Avaliação técnica, orientação e acompanhamento para obras, reformas e problemas construtivos.
+              Execução de obras, avaliação técnica, orientação e acompanhamento para obras, reformas e problemas construtivos.
             </motion.p>
 
             <motion.div
