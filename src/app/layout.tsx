@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { InstagramButton } from "@/components/ui/InstagramButton";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -107,6 +108,7 @@ export default function RootLayout({
         <main className="pb-16 lg:pb-0">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <InstagramButton />
       </body>
     </html>
   );
