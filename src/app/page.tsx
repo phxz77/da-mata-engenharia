@@ -13,6 +13,7 @@ import { Hero } from "@/components/hero/Hero";
 import { RealGallery } from "@/components/sections/RealGallery";
 import { CompletedWork } from "@/components/sections/CompletedWork";
 import { ClientReviews } from "@/components/sections/ClientReviews";
+import { SocialProof } from "@/components/sections/SocialProof";
 import { Partners } from "@/components/sections/Partners";
 
 export default function HomePage() {
@@ -28,8 +29,7 @@ export default function HomePage() {
       <RealGallery />
       <Inspections />
       <Differentials />
-      <ClientReviews />
-      <InstagramFeed />
+      <SocialProof />
       <Faq />
       <CtaBanner />
       <Partners />
