@@ -6,13 +6,11 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { Differentials } from "@/components/sections/Differentials";
 import { Faq } from "@/components/sections/Faq";
 import { Inspections } from "@/components/sections/Inspections";
-import { InstagramFeed } from "@/components/sections/InstagramFeed";
 import { Process } from "@/components/sections/Process";
 import { Services } from "@/components/sections/Services";
 import { Hero } from "@/components/hero/Hero";
 import { RealGallery } from "@/components/sections/RealGallery";
 import { CompletedWork } from "@/components/sections/CompletedWork";
-import { ClientReviews } from "@/components/sections/ClientReviews";
 import { SocialProof } from "@/components/sections/SocialProof";
 import { Partners } from "@/components/sections/Partners";
 
