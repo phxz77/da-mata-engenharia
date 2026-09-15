@@ -98,7 +98,7 @@ const completedWork: CompletedWorkItem[] = [
 
 export function CompletedWork() {
   return (
-    <section id="trabalhos-realizados" className="bg-paper py-20 sm:py-24 lg:py-32" aria-labelledby="completed-work-heading">
+    <section id="projetos" className="bg-paper py-20 sm:py-24 lg:py-32" aria-labelledby="completed-work-heading">
       <Container>
         <Reveal>
           <SectionHeading

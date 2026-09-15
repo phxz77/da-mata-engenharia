@@ -74,7 +74,7 @@ body {
 }
 
 section[id] {
-  scroll-margin-top: 5rem;
+  scroll-margin-top: calc(var(--header-height, 100px) + 0.5rem);
 }
 
 .technical-grid {

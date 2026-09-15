@@ -13,6 +13,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const reduced = useReducedMotion();
+  const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -32,6 +33,30 @@ export function Header() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  useEffect(() => {
+    const ids = navItems.map((n) => n.href.replace("/#", ""));
+    const elements = ids.map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(`/#${entry.target.id}`);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-40% 0px -55% 0px",
+        threshold: [0.25, 0.5],
+      },
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header
@@ -66,7 +91,9 @@ export function Header() {
               className={cn(
                 "link-underline text-[12px] font-medium uppercase tracking-[0.16em] transition-colors",
                 scrolled ? "text-paper/80 hover:text-paper" : "text-paper/85 hover:text-white",
+                active === item.href && "text-gold",
               )}
+              aria-current={active === item.href ? "page" : undefined}
             >
               {item.label}
             </Link>
