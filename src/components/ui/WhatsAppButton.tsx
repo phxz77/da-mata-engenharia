@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
+import Image from "next/image";
 import { site, defaultWhatsAppMessage } from "@/lib/site";
 import { buildWhatsAppUrl } from "@/lib/utils";
 
@@ -18,7 +18,7 @@ export function WhatsAppButton() {
         target={site.whatsapp ? "_blank" : undefined}
         rel={site.whatsapp ? "noopener noreferrer" : undefined}
       >
-        <MessageCircle className="h-5 w-5" strokeWidth={1.6} />
+        <Image src="/photos/wpp%20logo.jpg" alt="WhatsApp" width={20} height={20} className="h-5 w-5 object-contain" />
       </a>
 
       <div className="pointer-events-none fixed inset-x-0 bottom-0 z-40 px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] lg:hidden">
@@ -28,7 +28,7 @@ export function WhatsAppButton() {
           target={site.whatsapp ? "_blank" : undefined}
           rel={site.whatsapp ? "noopener noreferrer" : undefined}
         >
-          <MessageCircle className="h-4 w-4 text-gold" strokeWidth={1.6} />
+          <Image src="/photos/wpp%20logo.jpg" alt="WhatsApp" width={16} height={16} className="h-4 w-4 object-contain" />
           Falar com a Da Mata Engenharia
         </a>
       </div>

@@ -10,7 +10,6 @@ import { InstagramFeed } from "@/components/sections/InstagramFeed";
 import { Process } from "@/components/sections/Process";
 import { Projects } from "@/components/sections/Projects";
 import { Services } from "@/components/sections/Services";
-import { Testimonials } from "@/components/sections/Testimonials";
 import { Hero } from "@/components/hero/Hero";
 import { RealGallery } from "@/components/sections/RealGallery";
 import { CompletedWork } from "@/components/sections/CompletedWork";
@@ -30,7 +29,6 @@ export default function HomePage() {
       <RealGallery />
       <Inspections />
       <Differentials />
-      <Testimonials />
       <ClientReviews />
       <InstagramFeed />
       <Faq />
