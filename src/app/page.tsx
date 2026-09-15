@@ -8,7 +8,6 @@ import { Faq } from "@/components/sections/Faq";
 import { Inspections } from "@/components/sections/Inspections";
 import { InstagramFeed } from "@/components/sections/InstagramFeed";
 import { Process } from "@/components/sections/Process";
-import { Projects } from "@/components/sections/Projects";
 import { Services } from "@/components/sections/Services";
 import { Hero } from "@/components/hero/Hero";
 import { RealGallery } from "@/components/sections/RealGallery";
@@ -32,7 +31,6 @@ export default function HomePage() {
       <ClientReviews />
       <InstagramFeed />
       <Faq />
-      <Projects />
       <CtaBanner />
       <Partners />
       <Contact />
