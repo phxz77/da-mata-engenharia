@@ -5,9 +5,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Faq() {
   return (
-    <section id="faq" className="bg-white py-20 sm:py-24 lg:py-32" aria-labelledby="faq-heading">
+    <section id="faq" className="bg-white py-16 sm:py-20 lg:py-24" aria-labelledby="faq-heading">
       <Container>
-        <div className="grid gap-12 lg:grid-cols-12">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
             <Reveal>
               <SectionHeading

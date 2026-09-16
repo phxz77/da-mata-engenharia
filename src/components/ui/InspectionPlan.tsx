@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -13,7 +14,11 @@ const points = [
   { cx: 160, cy: 120, label: "P05" },
 ] as const;
 
-export function InspectionPlan() {
+type InspectionPlanProps = {
+  className?: string;
+};
+
+export function InspectionPlan({ className }: InspectionPlanProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
   const inView = useInView(ref, { once: true, margin: "-15% 0px" });
@@ -27,7 +32,11 @@ export function InspectionPlan() {
   const show = reduced || !shouldAnimate || inView;
 
   return (
-    <div ref={ref} className="relative mx-auto aspect-[4/3] w-full max-w-md" aria-hidden>
+    <div
+      ref={ref}
+      className={cn("relative mx-auto aspect-[4/3] w-full max-w-md", className)}
+      aria-hidden
+    >
       <svg viewBox="0 0 320 240" className="h-full w-full">
         <motion.rect
           x="24"

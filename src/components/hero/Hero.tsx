@@ -14,7 +14,7 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-[540px] items-end overflow-hidden bg-navy pb-6 pt-[var(--header-height)] sm:min-h-[600px] sm:pb-8 lg:min-h-[640px] lg:pb-8"
+      className="relative flex min-h-[540px] items-end overflow-hidden bg-navy pb-6 pt-[var(--header-height)] sm:min-h-[580px] sm:pb-8 lg:min-h-[560px] lg:pb-8 xl:min-h-[600px]"
       aria-labelledby="hero-heading"
     >
       <Image
@@ -29,7 +29,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-navy/15" />
       <div className="relative z-10 w-full pb-6 pt-12 sm:pb-8 sm:pt-14 lg:pb-8 lg:pt-12">
         <Container>
-          <div className="max-w-[38rem]">
+          <div className="max-w-[40rem] lg:max-w-[44rem]">
             <motion.span
               aria-hidden
               className="block h-px w-14 bg-gold"
@@ -41,7 +41,7 @@ export function Hero() {
 
             <motion.h1
               id="hero-heading"
-              className="mt-4 max-w-[9.5ch] text-balance text-[clamp(2.5rem,7vw,3.8rem)] font-semibold leading-[0.88] tracking-[-0.045em] text-paper sm:mt-5 sm:max-w-[10.5ch] sm:text-[clamp(3rem,5vw,4.3rem)] lg:max-w-[11ch] lg:text-[clamp(2.9rem,3.2vw,4.1rem)]"
+              className="mt-4 max-w-[9.5ch] text-balance text-[clamp(2.25rem,6.5vw,3.5rem)] font-semibold leading-[0.92] tracking-[-0.04em] text-paper sm:mt-5 sm:max-w-[10.5ch] sm:text-[clamp(2.5rem,4.5vw,3.75rem)] lg:max-w-[12ch] lg:text-[clamp(2.5rem,3vw,3.5rem)] xl:text-[clamp(2.75rem,2.8vw,3.75rem)]"
               initial={reduced ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.55, ease }}
@@ -70,7 +70,7 @@ export function Hero() {
               </Button>
             </motion.div>
           </div>
-          <div className="mt-8 grid max-w-3xl grid-cols-3 border-t border-white/25 pt-4 text-paper sm:mt-9 sm:pt-5">
+          <div className="mt-8 grid max-w-3xl grid-cols-3 border-t border-white/25 pt-4 text-paper sm:mt-8 sm:pt-5 lg:max-w-4xl">
             {[
               ["01", "Diagnóstico"],
               ["02", "Acompanhamento"],

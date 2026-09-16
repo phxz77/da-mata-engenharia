@@ -46,7 +46,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contato" className="bg-navy py-24 text-paper sm:py-28 lg:py-36" aria-labelledby="contact-heading">
+    <section id="contato" className="bg-navy py-20 text-paper sm:py-24 lg:py-28" aria-labelledby="contact-heading">
       <Container>
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">

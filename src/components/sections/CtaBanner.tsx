@@ -10,7 +10,7 @@ export function CtaBanner() {
     : "/#contato";
 
   return (
-    <section className="relative overflow-hidden bg-navy py-20 sm:py-24 lg:py-28" aria-labelledby="cta-heading">
+    <section className="relative overflow-hidden bg-navy py-16 sm:py-20 lg:py-24" aria-labelledby="cta-heading">
       <div className="pointer-events-none absolute inset-x-10 top-8 hidden h-px bg-gold/40 lg:block" />
       <div className="pointer-events-none absolute inset-y-8 left-10 hidden w-px bg-gold/25 lg:block" />
 
@@ -19,7 +19,7 @@ export function CtaBanner() {
           <p className="text-[11px] uppercase tracking-[0.32em] text-gold-soft">Você não precisa decidir sozinho</p>
           <h2
             id="cta-heading"
-            className="mt-5 max-w-[16ch] text-balance text-3xl font-semibold tracking-[-0.03em] text-paper sm:text-4xl lg:text-5xl"
+            className="mt-5 max-w-[18ch] text-balance text-[clamp(1.75rem,3.5vw,2.5rem)] font-semibold tracking-[-0.03em] text-paper sm:max-w-[20ch] lg:text-[clamp(2rem,2.8vw,2.75rem)]"
           >
             Tem uma obra, reforma ou problema técnico?
           </h2>

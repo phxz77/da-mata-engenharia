@@ -9,7 +9,7 @@ export function BeforeAfter() {
   const item = beforeAfterItems[0];
 
   return (
-    <section className="bg-paper py-20 sm:py-24 lg:py-32" aria-labelledby="before-after-heading">
+    <section className="bg-paper py-16 sm:py-20 lg:py-24" aria-labelledby="before-after-heading">
       <Container>
         <Reveal>
           <SectionHeading
@@ -26,7 +26,7 @@ export function BeforeAfter() {
         {item ? (
           <Reveal delay={0.12}>
             <div className="relative mt-12">
-              <div className="mx-auto w-full max-w-[60rem] lg:w-[54%]">
+              <div className="mx-auto w-full max-w-[60rem] lg:w-[68%] xl:w-[62%]">
                 <ImageCompare
                   before={item.before}
                   after={item.after}

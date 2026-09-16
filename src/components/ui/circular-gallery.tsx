@@ -75,14 +75,14 @@ export const CircularGallery = forwardRef<HTMLDivElement, CircularGalleryProps>(
           ))}
         </div>
 
-        <div className="gallery-desktop-stage mx-auto hidden w-full max-w-[1320px] overflow-x-auto px-10 pb-5">
-          <div className="flex min-w-max gap-6">
+        <div className="gallery-desktop-stage mx-auto hidden w-full max-w-[var(--container-max)] overflow-x-auto px-[var(--container-gutter)] pb-5 no-scrollbar">
+          <div className="flex min-w-max gap-5 lg:gap-6">
             {items.map((item) => (
               <button
                 key={item.id}
                 type="button"
                 onClick={() => setSelectedItem(item)}
-                className="group relative aspect-[4/5] h-[420px] w-[300px] shrink-0 overflow-hidden border border-white/15 bg-[#0d2233] text-left shadow-2xl"
+                className="group relative aspect-[4/5] h-[min(380px,42vh)] w-[min(280px,22vw)] shrink-0 overflow-hidden border border-white/15 bg-[#0d2233] text-left shadow-2xl"
                 aria-label={`Abrir imagem: ${item.title}`}
               >
                 <div className="relative h-full w-full overflow-hidden">

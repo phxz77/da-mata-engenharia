@@ -43,7 +43,7 @@ export function About() {
 
           <div className="lg:col-span-7">
             <Reveal delay={0.12}>
-              <div className="relative mx-auto aspect-[3/4] w-full max-w-[470px] overflow-hidden bg-navy lg:mx-0 lg:max-w-[540px] lg:justify-self-end">
+              <div className="relative mx-auto aspect-[3/4] w-full max-w-[470px] overflow-hidden bg-navy lg:mx-0 lg:max-w-none lg:justify-self-end">
                 <Image
                   src={photos.paulo}
                   alt="Engenheiro Paulo Cesar em uma obra, usando capacete e segurando uma prancheta."

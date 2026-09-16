@@ -11,7 +11,7 @@ const items = [
 export function Authority() {
   return (
     <section className="border-y border-white/10 bg-navy" aria-labelledby="authority-heading">
-      <Container className="py-14 lg:py-16">
+      <Container className="py-12 lg:py-14">
         <Reveal>
           <p
             id="authority-heading"

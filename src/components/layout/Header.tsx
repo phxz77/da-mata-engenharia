@@ -19,7 +19,7 @@ export function Header() {
     const onScroll = () => {
       const nextScrolled = window.scrollY > 12;
       setScrolled(nextScrolled);
-      document.documentElement.style.setProperty("--header-height", nextScrolled ? "80px" : "100px");
+      document.documentElement.style.setProperty("--header-height", nextScrolled ? "72px" : "88px");
     };
 
     onScroll();
@@ -70,20 +70,20 @@ export function Header() {
       <Container
         className={cn(
           "flex items-center justify-between transition-all duration-500",
-          scrolled ? "h-[80px]" : "h-[100px]",
+          scrolled ? "h-[72px]" : "h-[88px]",
         )}
       >
         <Link href="/#inicio" aria-label="Da Mata Engenharia — início" className="relative z-50">
           <Logo
             className={cn(
               "transition-all duration-500",
-              "h-14 sm:h-16",
+              "h-12 sm:h-14",
               open ? "brightness-0" : "brightness-0 invert",
             )}
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">
+        <nav className="hidden items-center gap-6 xl:gap-8 lg:flex" aria-label="Principal">
           {navItems.map((item) => (
             <Link
               key={item.href}

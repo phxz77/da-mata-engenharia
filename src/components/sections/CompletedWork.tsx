@@ -98,7 +98,7 @@ const completedWork: CompletedWorkItem[] = [
 
 export function CompletedWork() {
   return (
-    <section id="projetos" className="bg-paper py-20 sm:py-24 lg:py-32" aria-labelledby="completed-work-heading">
+    <section id="projetos" className="bg-paper py-16 sm:py-20 lg:py-24" aria-labelledby="completed-work-heading">
       <Container>
         <Reveal>
           <SectionHeading
@@ -109,20 +109,20 @@ export function CompletedWork() {
           />
         </Reveal>
 
-        <div className="mt-14 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2 lg:mt-14 lg:grid-cols-3 xl:grid-cols-4">
           {completedWork.map((work, index) => {
             const Icon = work.icon;
 
             return (
               <Reveal key={work.number} delay={0.05 * index} className="h-full">
-                <article className="group flex h-full min-h-56 flex-col bg-white p-6 transition-colors duration-300 hover:bg-navy sm:p-7">
+                <article className="group flex h-full min-h-52 flex-col bg-white p-6 transition-colors duration-300 hover:bg-navy sm:p-6 lg:min-h-48">
                   <div className="flex items-start justify-between gap-4">
                     <Icon className="h-7 w-7 text-navy transition-colors duration-300 group-hover:text-gold" strokeWidth={1.35} aria-hidden="true" />
                     <span className="text-[11px] tracking-[0.28em] text-gold-dark transition-colors duration-300 group-hover:text-gold-soft">
                       {work.number}
                     </span>
                   </div>
-                  <h3 className="mt-10 max-w-xs text-xl font-semibold leading-tight tracking-[-0.02em] text-navy transition-colors duration-300 group-hover:text-paper">
+                  <h3 className="mt-8 text-lg font-semibold leading-tight tracking-[-0.02em] text-navy transition-colors duration-300 group-hover:text-paper sm:mt-10 sm:text-xl lg:max-w-none">
                     {work.title}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted transition-colors duration-300 group-hover:text-paper/70">

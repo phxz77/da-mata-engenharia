@@ -25,7 +25,7 @@ export function Process() {
   const progress = useSpring(scrollYProgress, { stiffness: 60, damping: 22, mass: 0.4 });
 
   return (
-    <section id="processo" className="bg-white py-20 sm:py-24 lg:py-32" aria-labelledby="process-heading">
+    <section id="processo" className="bg-white py-16 sm:py-20 lg:py-24" aria-labelledby="process-heading">
       <Container>
         <Reveal>
           <SectionHeading
